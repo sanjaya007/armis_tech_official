@@ -119,6 +119,10 @@ html {
   background-color: #000000;
 }
 
+.hidden-nav {
+  display: none;
+}
+
 /* mobile nav  */
 .mobile-nav {
   position: fixed;
@@ -193,7 +197,12 @@ html {
 .head-banner .title p {
   text-align: center;
   color: #6c6c6c;
-  margin-top: 15px !important;
+  font-family: gilroySemiBold;
+}
+
+.head-banner .title p a {
+  color: #6c6c6c;
+  font-family: gilroySemiBold;
 }
 
 .head-banner .line-box {
@@ -281,6 +290,13 @@ html {
   margin-top: 10px !important;
 }
 
+.contact-banner .box .list .info a.email-link {
+  color: #ffffff;
+  font-size: 15px;
+  font-family: gilroySemiBold;
+  text-decoration: none;
+}
+
 /* key frames  */
 
 @keyframes left_right {
@@ -339,6 +355,12 @@ html {
 .footer-container .detail-box .list p {
   color: #ffffff;
   font-family: gilroySemiBold;
+}
+
+.footer-container .detail-box .list a {
+  color: #ffffff;
+  font-family: gilroySemiBold;
+  display: block;
 }
 
 .copyright-box .list p {
@@ -426,6 +448,10 @@ html {
   .nav-bar {
     padding-top: 20px !important;
     padding-bottom: 20px !important;
+    flex-direction: row-reverse;
+  }
+  .hidden-nav {
+    display: block;
   }
   .nav-bar .link-container {
     display: none;

@@ -32,6 +32,12 @@ $(window).on("load", function () {
     }
   );
 
+  // product
+  // $(".scroll-box").on("scroll", function (e) {
+  //   console.log(e);
+  //   console.log(e.target.clientWidth);
+  // });
+
   // modal
   $(".modal-wrapper").addClass("hidden");
   $("#whatwedoBody").removeClass("fixed-body");

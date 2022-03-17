@@ -124,6 +124,10 @@ html {
   background-color: #ffffff;
 }
 
+.hidden-nav {
+  display: none;
+}
+
 /* mobile nav  */
 .mobile-nav {
   position: fixed;
@@ -551,6 +555,46 @@ html {
   color: #ffffff;
 }
 
+.company-container .left-box .rec-box .rec {
+  width: 12px;
+  height: 26px;
+  background-color: #ffffff;
+  margin: 0 4px !important;
+  transform: skew(-20deg);
+  animation: 2s opacity_toggle infinite linear;
+}
+
+.company-container .left-box .rec-box .rec.op-1 {
+  opacity: 1;
+}
+.company-container .left-box .rec-box .rec.op-2 {
+  opacity: 0.9;
+}
+.company-container .left-box .rec-box .rec.op-3 {
+  opacity: 0.8;
+}
+.company-container .left-box .rec-box .rec.op-4 {
+  opacity: 0.7;
+}
+.company-container .left-box .rec-box .rec.op-5 {
+  opacity: 0.6;
+}
+.company-container .left-box .rec-box .rec.op-6 {
+  opacity: 0.5;
+}
+.company-container .left-box .rec-box .rec.op-7 {
+  opacity: 0.4;
+}
+.company-container .left-box .rec-box .rec.op-8 {
+  opacity: 0.3;
+}
+.company-container .left-box .rec-box .rec.op-9 {
+  opacity: 0.2;
+}
+.company-container .left-box .rec-box .rec.op-10 {
+  opacity: 0.2;
+}
+
 .company-container .right-box .list-col-first {
   padding-top: 50px !important;
 }
@@ -652,6 +696,7 @@ html {
   font-family: gilroyMedium;
   opacity: 0.9;
   margin-bottom: 20px !important;
+  line-height: 1.6;
 }
 
 .team-container .right-box .info h5 {
@@ -659,6 +704,7 @@ html {
   color: #ffffff;
   font-size: 14px;
   line-height: 1.5;
+  letter-spacing: 0.4px;
 }
 
 .team-container .right-box .btn-container a {
@@ -710,6 +756,16 @@ html {
   background-size: cover;
 }
 
+.partner-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -2;
+}
+
 .partner-container .title h1 {
   font-family: gilroyBold;
   font-size: 36px;
@@ -751,7 +807,7 @@ html {
   position: absolute;
   z-index: -1;
   animation: rotatingVector 20s infinite linear;
-  opacity: 0.6;
+  opacity: 0.4;
 }
 
 /* footer  */
@@ -788,6 +844,12 @@ html {
   font-family: gilroySemiBold;
 }
 
+.footer-container .detail-box .list a {
+  color: #ffffff;
+  font-family: gilroySemiBold;
+  display: block;
+}
+
 .copyright-box .list p {
   color: #ffffff;
   font-size: 14px;
@@ -814,7 +876,7 @@ html {
     transform: translateY(-400%);
   }
   100% {
-    transform: translateY(0);
+    transform: translateY(0%);
   }
 }
 
@@ -824,6 +886,29 @@ html {
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes opacity_toggle {
+  0% {
+    background-color: #ffffff;
+    transform: skew(-20deg);
+  }
+  25% {
+    background-color: grey;
+    transform: skew(-10deg);
+  }
+  50% {
+    background-color: #ffffff;
+    transform: skew(-30deg);
+  }
+  75% {
+    background-color: grey;
+    transform: skew(-35deg);
+  }
+  100% {
+    background-color: #ffffff;
+    transform: skew(-20deg);
   }
 }
 
@@ -902,11 +987,17 @@ html {
   .company-container .row > div {
     min-width: 100%;
   }
+  .company-container .left-box .title {
+    margin-bottom: 30px !important;
+  }
   .company-container .left-box .title h5 {
     text-align: center;
   }
   .company-container .left-box .title h1 {
     text-align: center;
+  }
+  .company-container .left-box .rec-box {
+    justify-content: center;
   }
   .company-container .right-box {
     flex-direction: column;
@@ -943,6 +1034,9 @@ html {
   .head-container .head-box .title img.title-img-first {
     left: 0;
   }
+  .head-container .head-box .title span {
+    transform: translateY(5%);
+  }
   .about-container .box .title h1 {
     font-size: 34px;
   }
@@ -958,6 +1052,20 @@ html {
   .partner-container .title h1 {
     font-size: 34px;
   }
+  @keyframes spin_word {
+    10% {
+      transform: translateY(5%);
+    }
+    40% {
+      transform: translateY(-194%);
+    }
+    70% {
+      transform: translateY(-390%);
+    }
+    100% {
+      transform: translateY(5%);
+    }
+  }
 }
 
 @media (max-width: 767px) {
@@ -968,6 +1076,10 @@ html {
   .nav-bar {
     padding-top: 20px !important;
     padding-bottom: 20px !important;
+    flex-direction: row-reverse;
+  }
+  .hidden-nav {
+    display: block;
   }
   .nav-bar .link-container {
     display: none;
@@ -998,6 +1110,9 @@ html {
   }
   .head-container .head-box .link-container a::before {
     left: calc(50% - 25px);
+  }
+  .head-container .head-box .title span {
+    transform: translateY(10%);
   }
   .about-container {
     padding-top: 100px !important;
@@ -1040,6 +1155,10 @@ html {
   }
   .company-container .left-box .title h1 {
     font-size: 32px;
+  }
+  .company-container .left-box .rec-box .rec {
+    width: 10px;
+    height: 20px;
   }
   .team-container {
     padding-top: 240px !important;
@@ -1093,6 +1212,20 @@ html {
   .footer-container .left-detail {
     margin-bottom: 50px !important;
   }
+  @keyframes spin_word {
+    10% {
+      transform: translateY(10%);
+    }
+    40% {
+      transform: translateY(-188%);
+    }
+    70% {
+      transform: translateY(-386%);
+    }
+    100% {
+      transform: translateY(10%);
+    }
+  }
 }
 
 @media (max-width: 550px) {
@@ -1105,6 +1238,9 @@ html {
   }
   .head-container .head-box .title h1 {
     font-size: 40px;
+  }
+  .head-container .head-box .title span {
+    transform: translateY(12%);
   }
   .about-container .box .title h5 {
     font-size: 10px;
@@ -1162,11 +1298,28 @@ html {
   .copyright-box .list p:nth-last-child(1) {
     margin-bottom: 0 !important;
   }
+  @keyframes spin_word {
+    10% {
+      transform: translateY(12%);
+    }
+    40% {
+      transform: translateY(-186%);
+    }
+    70% {
+      transform: translateY(-384%);
+    }
+    100% {
+      transform: translateY(12%);
+    }
+  }
 }
 
 @media (max-width: 450px) {
   .head-container .head-box .title .word-wrap {
     flex-direction: column;
+  }
+  .head-container .head-box .title span {
+    transform: translateY(14%);
   }
   .about-container .box .title h1 {
     font-size: 28px;
@@ -1188,5 +1341,19 @@ html {
   }
   .footer-container .detail-box .title h1 {
     font-size: 34px;
+  }
+  @keyframes spin_word {
+    10% {
+      transform: translateY(14%);
+    }
+    40% {
+      transform: translateY(-184%);
+    }
+    70% {
+      transform: translateY(-382%);
+    }
+    100% {
+      transform: translateY(14%);
+    }
   }
 }

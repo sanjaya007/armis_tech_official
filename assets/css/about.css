@@ -119,6 +119,10 @@ html {
   background-color: #000000;
 }
 
+.hidden-nav {
+  display: none;
+}
+
 /* mobile nav  */
 .mobile-nav {
   position: fixed;
@@ -194,6 +198,7 @@ html {
   text-align: center;
   color: #6c6c6c;
   margin-top: 15px !important;
+  font-family: gilroySemiBold;
 }
 
 .head-banner .line-box {
@@ -458,6 +463,12 @@ html {
   font-family: gilroySemiBold;
 }
 
+.footer-container .detail-box .list a {
+  color: #ffffff;
+  font-family: gilroySemiBold;
+  display: block;
+}
+
 .copyright-box .list p {
   color: #ffffff;
   font-size: 14px;
@@ -588,6 +599,10 @@ html {
   .nav-bar {
     padding-top: 20px !important;
     padding-bottom: 20px !important;
+    flex-direction: row-reverse;
+  }
+  .hidden-nav {
+    display: block;
   }
   .nav-bar .link-container {
     display: none;
