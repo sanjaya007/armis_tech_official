@@ -1,6 +1,9 @@
 $(window).on("load", function () {
-  $(".modal-wrapper").addClass("hidden");
-  $("#homeBody").removeClass("fixed-body");
+  $(".modal-wrapper").fadeOut(1000, function () {
+    $(".modal-wrapper").remove();
+    $("#modalScript").remove();
+    $("#homeBody").removeClass("fixed-body");
+  });
 
   $(".nav-tab").on("click", function () {
     $(".mobile-nav").animate({

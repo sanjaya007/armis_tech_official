@@ -39,8 +39,11 @@ $(window).on("load", function () {
   // });
 
   // modal
-  $(".modal-wrapper").addClass("hidden");
-  $("#whatwedoBody").removeClass("fixed-body");
+  $(".modal-wrapper").fadeOut(1000, function () {
+    $(".modal-wrapper").remove();
+    $("#modalScript").remove();
+    $("#whatwedoBody").removeClass("fixed-body");
+  });
 
   // nav
   $(".nav-tab").on("click", function () {

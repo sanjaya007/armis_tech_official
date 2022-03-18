@@ -665,7 +665,6 @@ html {
     transform: rotate(360deg);
   }
 }
-
 /* modal  */
 .modal-wrapper {
   position: fixed;
@@ -684,21 +683,57 @@ html {
   display: none;
 }
 
-.modal-wrapper .image-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+.modal-wrapper .img-container {
+  position: relative;
+  padding: 12px !important;
+  animation: scale_toggle 3s infinite linear;
 }
 
-.modal-wrapper p {
-  text-transform: uppercase;
+.modal-wrapper .img-container .vector-border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border: 2px dotted #2f2cd777;
+  border-radius: 50%;
+  z-index: -1;
 }
 
-.modal-wrapper .image-container .spinner-img {
-  height: 50px;
+.modal-wrapper .img-container .vector-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border: 4px solid #2e2cd7;
+  border-radius: 50%;
+  border-top: transparent;
+  border-right: transparent;
+  border-bottom: transparent;
+  z-index: -1;
+  overflow: hidden;
+  padding: 2px !important;
+  animation: border_rotation 1s infinite linear;
 }
 
+.modal-vector {
+  position: absolute;
+  z-index: -1;
+  animation: rotatingVector 5s infinite linear;
+}
+
+.modal-vector-dot-first,
+.modal-vector-dot-second,
+.modal-vector-dot-third,
+.modal-vector-dot-fourth,
+.modal-vector-dot-fifth {
+  height: 12px;
+  width: 12px;
+  background-color: #2e2cd7;
+  border-radius: 50%;
+  opacity: 0.4;
+}
 /* responsive  */
 @media (max-width: 1200px) {
   .nav-bar .right-nav .link-container .nav-link {

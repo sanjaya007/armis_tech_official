@@ -33,8 +33,11 @@ $(window).on("load", function () {
   );
 
   // modal
-  $(".modal-wrapper").addClass("hidden");
-  $("#contactBody").removeClass("fixed-body");
+  $(".modal-wrapper").fadeOut(1000, function () {
+    $(".modal-wrapper").remove();
+    $("#modalScript").remove();
+    $("#contactBody").removeClass("fixed-body");
+  });
 
   // nav
   $(".nav-tab").on("click", function () {
