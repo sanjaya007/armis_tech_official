@@ -32,12 +32,6 @@ $(window).on("load", function () {
     }
   );
 
-  // product
-  // $(".scroll-box").on("scroll", function (e) {
-  //   console.log(e);
-  //   console.log(e.target.clientWidth);
-  // });
-
   // modal
   $(".modal-wrapper").fadeOut(1000, function () {
     $(".modal-wrapper").remove();
@@ -60,4 +54,46 @@ $(window).on("load", function () {
     });
     $("#whatwedoBody").removeClass("fixed-body");
   });
+
+  // product
+  let numberOfProducts = $("#productBox > *").length;
+  const productWidth = $("#productBox")
+    .children()[0]
+    .getBoundingClientRect().width;
+
+  function updateProgress(count) {
+    const initialProgress = 100 / numberOfProducts;
+    $("#totalCount").text(
+      count >= 10 ? numberOfProducts : `0${numberOfProducts}`
+    );
+    $("#currentCount").text(count >= 10 ? count : `0${count}`);
+    $("#projectCount").text(count >= 10 ? count : `0${count}`);
+    $("#progressBar").animate({ width: initialProgress * count + "%" });
+  }
+
+  function scrollProducts(direction, count) {
+    updateProgress(count);
+    if (direction === "positive" && count < numberOfProducts) {
+      setTimeout(() => {
+        ++count;
+        $("#productBox").animate({ scrollLeft: `+=${productWidth}` });
+        if (count === numberOfProducts) {
+          scrollProducts("negative", count);
+        } else {
+          scrollProducts(direction, count);
+        }
+      }, 3000);
+    } else {
+      setTimeout(() => {
+        --count;
+        $("#productBox").animate({ scrollLeft: `-=${productWidth}` });
+        if (count <= 1) {
+          scrollProducts("positive", count);
+        } else {
+          scrollProducts(direction, count);
+        }
+      }, 3000);
+    }
+  }
+  scrollProducts("positive", 1);
 });
